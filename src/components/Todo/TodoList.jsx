@@ -13,7 +13,7 @@ const TodoList = (props) => {
   return (
     <ul style={styles.ul}>
       {props.todos.map(todo => {
-        return <TodoItem />
+        return <TodoItem todo={todo} />
       })}
     </ul>
   );
