@@ -36,7 +36,10 @@ const TodoItem = ({ todo, index, onChange }) => {
         <strong>{index + 1}.</strong>
         &nbsp;{todo.title}
       </span>
-      <button className="btn remove-button" onClick={() => removeTodo(todo.id)}>
+      <button
+        className="btn remove-button"
+        onClick={removeTodo.bind(null, todo.id)}
+      >
         &times;
       </button>
     </li>
