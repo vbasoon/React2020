@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types'
 
 const TodoItem = ({ todo, index }) => {
   return (
@@ -9,6 +10,11 @@ const TodoItem = ({ todo, index }) => {
       {todo.title}
     </li>
   )
+}
+
+TodoItem.propTypes = {
+  todo: PropTypes.object.isRequired,
+  index: PropTypes.number.isRequired
 }
 
 export default TodoItem;
