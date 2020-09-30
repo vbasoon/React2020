@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
+import Context from "../../context";
 
 const styles = {
   li: {
@@ -17,6 +18,7 @@ const styles = {
 };
 
 const TodoItem = ({ todo, index, onChange }) => {
+  const { removeTodo } = useContext(Context);
   const classes = [];
 
   if (todo.completed) {
@@ -34,7 +36,9 @@ const TodoItem = ({ todo, index, onChange }) => {
         <strong>{index + 1}.</strong>
         &nbsp;{todo.title}
       </span>
-      <button className="btn remove-button">&times;</button>
+      <button className="btn remove-button" onClick={() => removeTodo(todo.id)}>
+        &times;
+      </button>
     </li>
   );
 };
